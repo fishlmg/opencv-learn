@@ -1,3 +1,4 @@
 opencv-python
 numpy
+# 仅 utils/ 下「非本仓主题」的显存脚本需要，OpenCV 练习可不装
 torch

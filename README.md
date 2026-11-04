@@ -16,37 +16,35 @@ OpenCV 计算机视觉基础与实战练习集合，每个脚本对应一个独�
 | `opencv-test/hsv.py` | HSV 颜色空间与颜色分割 |
 | `opencv-test/qrcode.py` | 二维码检测与识别 |
 | `opencv-test/template.py` | 模板匹配 |
-| `test.py` | 基础操作练习 |
-| `free.py` / `FreeGPUMen.py` | PyTorch GPU 显存释放工具 |
+| `basics.py` | 阈值、轮廓近似与面积（读取仓库根目录的 `1.png`） |
 
 ## 🚀 快速开始
 
 ```bash
 pip install -r requirements.txt
 
-# 按需运行单个练习
+# 在仓库根目录按需运行单个练习
 python opencv-test/contours.py
 python opencv-test/hsv.py
 python opencv-test/qrcode.py
+python basics.py
 ```
 
-## 💡 显存清理小工具
-
-训练后 GPU 显存未释放时，可运行：
-
-```python
-# free.py 核心逻辑
-import torch
-torch.cuda.empty_cache()
-```
+`basics.py` 需要自行准备根目录下的 `1.png`。`opencv-test/` 里的脚本读取 `./img/` 下的图片（相对当前工作目录）。
 
 ## 📦 依赖
 
-OpenCV、NumPy、PyTorch（显存工具）—— 详见 [requirements.txt](requirements.txt)
+OpenCV、NumPy——详见 [requirements.txt](requirements.txt)。
+
+`torch` 只给下方「非本仓主题」的显存脚本使用，跑 OpenCV 练习可以不装。
+
+## 🧰 非本仓主题
+
+`utils/free.py` 与 `utils/FreeGPUMen.py` 是 PyTorch / NVIDIA 显存清理片段，与 OpenCV 练习无关，仅归档在 [utils/](utils/README.md)。用途和风险见该目录说明。
 
 ## 📝 说明
 
-测试图片素材不包含在仓库中（`.gitignore` 已排除），可自行准备图片放入对应目录运行。
+测试图片素材不包含在仓库中（`.gitignore` 已排除 `*.jpg` / `*.jpeg` / `*.png` 与 `opencv-test/img/`），可自行准备图片放入对应路径后运行。
 
 ## 📄 许可证
 
